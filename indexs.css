@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: Poppins;
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-size: 12px;
+    left: 0;
+}
+.carouser{
+    max-width: 100vw;
+    max-height: 200vw;
+    overflow: hidden;
+    margin-top: -50px;
+}
+.carouser .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carouser .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carouser .list .item .content{
+    position: absolute;
+    top: 30%;
+    max-width: 1140px;
+    max-width: 80%;
+    left: 12%;
+    transform: translateX(-50px);
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+.carouser .list .item .content .author{
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+.carouser .list .item .content .title,
+.carouser .list .item .content .topic{
+    font-weight: bold;
+    font-size: 5em;
+    list-style: 1.3em;
+
+}
+.carouser .list .item .content .topic{
+    color: #f1683a;
+}
+.carouser .list .item .content button{
+ margin-top: 20px;
+ height: 40px;
+ border: none;
+ background-color: #fff;
+ letter-spacing: 2px;
+ font-family: Poppins;
+ font-weight: 500;
+}
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    width: max-content;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-grow: 1;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .content .title{
+    font-weight: bold;
+}
+.arrows{
+    position: absolute;
+    top: 88%;
+    right: 52%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    font-family: monospace;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: large;
+    transition: .5s;
+    z-index: 100;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: #555;
+}
+.carouser .list .item:nth-child(1){
+    z-index: 1;
+}
+
+.carouser .list .item:nth-child(1) .author,
+.carouser .list .item:nth-child(1) .title,
+.carouser .list .item:nth-child(1) .topic,
+.carouser .list .item:nth-child(1) .def,
+.carouser .list .item:nth-child(1) .button{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+.carouser .list .item:nth-child(1) .title{
+    animation-delay:1.2s;
+}
+.carouser .list .item:nth-child(1) .topic{
+    animation-delay: 1.4s;
+}
+.carouser .list .item:nth-child(1) .def{
+    animation-delay: 1.6s;
+}
+.carouser .list .item:nth-child(1) .button{
+    animation-delay: 1.8s;
+}
+.carouser.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+.carouser.next .thumbnail .item:nth-last-child(1){
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+@keyframes showThumbnail{
+    to{
+        width: 150px;
+    }
+}
+.carouser.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+@keyframes transformThumbnail{
+    to{
+        transform: translateX(0);
+    }
+}
+.carouser.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+.carouser.prev .list .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    animation: outImage 0.5s linear 1 forwards;
+}
+@keyframes outImage{
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+.carouser.prev .thumbnail .item:nth-child(1){
+    width: 0;
+    overflow: hidden; 
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+.carouser.prev .list .item:nth-child(2) .author,
+.carouser.prev .list .item:nth-child(2) .title,
+.carouser.prev .list .item:nth-child(2) .topic,
+.carouser.prev .list .item:nth-child(2) .def,
+.carouser.prev .list .item:nth-child(2) .button{
+    animation: contentOut 1.5s linear 1 forwards;
+}
+@keyframes contentOut{
+    to{
+        transform: translateY(150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+.carouser.next .arrows button,
+.carouser.prev .arrows button{
+    pointer-events: none;
+}
+.time{
+    width: 0;
+    height: 5px;
+    background-color: #f1683a;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.carouser.next .time,
+.carouser.prev .time{
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+@keyframes timeRunning{
+    to{
+        width: 0;
+    }
+}
+
+@media (max-width: 800px){
+    .hideMoblie{
+        display: none;
+    }
+}
+main{
+    overflow: hidden;
+}

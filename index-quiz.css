@@ -1,0 +1,144 @@
+.quiz-cont h1{
+    display: flex;
+   justify-content: center;
+}
+.quiz-cont{
+    background-color: rgb(0, 5, 26);
+    background: linear-gradient(34deg, rgb(0, 0, 0) 12%, rgba(5, 34, 61, 0.616) 70%, rgb(0, 57, 95) 100%);
+    padding: 20px 50px;
+}
+.cont-box-grade{
+    flex-direction: row;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-start;
+    gap: 50px;
+}
+.grades{
+  border-radius: 10px;
+  flex-grow: 1;
+  flex-basis: 120px;
+  padding: 20px 40px;
+  border: solid 2px rgb(173, 108, 11);
+  align-items: center;
+}
+.cont-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grades .picture{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+.grades h1{
+    font-size: 17px;
+}
+.cont-title button{
+    border:solid 1px #fffb17;
+    border-radius: 7px;
+    font-size: 17px;
+    padding: 10px 45px;
+    color: aliceblue;
+    background-color: transparent;
+    transition: .5s;
+}
+.cont-title button:hover{
+    transform: scale(1.1, 1.1);
+    box-shadow: 0 6px 18px rgb(233, 156, 14);
+    
+}
+.cont-title button:active{
+    background-color: #fffb17;
+    color: black;
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .book-wrapper {
+    width: 150px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .book {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.137));
+  }
+  .book-wrapper .book-page {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    animation: paging 0.15s linear infinite;
+    transform-origin: left;
+  }
+  @keyframes paging {
+    0% {
+      transform: rotateY(0deg) skewY(0deg);
+    }
+    50% {
+      transform: rotateY(90deg) skewY(-20deg);
+    }
+    100% {
+      transform: rotateY(180deg) skewY(0deg);
+    }
+  }
+.library-cont{
+background: linear-gradient(43deg, black 20%, rgb(36, 24, 1) 100%) ;
+}
+.library-cont .text-cont{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;                                        
+   }
+.cont-all-book{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 39px;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+.books-cont, .workshit-cont{
+  border: solid 3px rgb(226, 139, 9);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .5s;
+}
+.books-cont:hover, .workshit-cont:hover{
+   box-shadow: 0 0 30px orange;
+   transform: scale(102% ,102%);
+}
+ .btn-books{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  border: none;
+  color: #fff;
+  font-size: 19px;
+  padding: 10px 50px;
+  background-color: rgb(230, 148, 26);
+  
+}
+.btn-books:hover{
+background-color: rgb(168, 127, 49);
+}
+.btn-books:active{
+  background-color: transparent;
+  border: solid 2px orange;
+}
